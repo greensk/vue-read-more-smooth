@@ -153,7 +153,7 @@ export default {
       }
     },
     getLineHeight(element) {
-      let temp = document.createElement(element.children[0].nodeName);
+      let temp = window.document.createElement(element.children[0].nodeName);
       const cpStyle = getComputedStyle(element.children[0]);
       temp.setAttribute(
         "style",
@@ -163,7 +163,7 @@ export default {
           cpStyle.fontSize
       );
       temp.innerHTML = "test";
-      temp = document.body.appendChild(temp);
+      temp = window.document.body.appendChild(temp);
       const ret = temp.clientHeight;
       temp.parentNode.removeChild(temp);
       return ret;
